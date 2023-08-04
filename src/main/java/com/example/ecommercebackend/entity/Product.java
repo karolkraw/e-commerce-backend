@@ -1,7 +1,6 @@
 package com.example.ecommercebackend.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
