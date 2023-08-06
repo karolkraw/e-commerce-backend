@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductCategoryServiceImpl implements ProductCategoryService {
+public class ProductCategoryService implements ProductCategoryService {
     private final ProductCategoryRepository categoryRepository;
 
     @Autowired
-    public ProductCategoryServiceImpl(ProductCategoryRepository categoryRepository) {
+    public ProductCategoryService(ProductCategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 
