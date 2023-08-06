@@ -2,41 +2,49 @@ package com.example.ecommercebackend.Product.dto;
 
 import com.example.ecommercebackend.Product.Product;
 import com.example.ecommercebackend.ProductCategory.ProductCategory;
+import com.example.ecommercebackend.ProductCategory.dto.ProductCategoryReadDto;
+
+import static com.example.ecommercebackend.ProductCategory.dto.CategoryDtoMapper.mapCategoryReadDtoToCategory;
+import static com.example.ecommercebackend.ProductCategory.dto.CategoryDtoMapper.mapCategoryToCategoryReadDto;
 
 public class ProductDtoMapper {
     public static ProductDto mapProductToDto(Product product) {
-        ProductDto dto = new ProductDto();
-        dto.setId(product.getId());
-        dto.setCategoryId(product.getCategory().getId());
-        dto.setSku(product.getSku());
-        dto.setName(product.getName());
-        dto.setDescription(product.getDescription());
-        dto.setUnitPrice(product.getUnitPrice());
-        dto.setImageUrl(product.getImageUrl());
-        dto.setActive(product.isActive());
-        dto.setUnitsInStock(product.getUnitsInStock());
-        dto.setDateCreated(product.getDateCreated());
-        dto.setLastUpdated(product.getLastUpdated());
-        return dto;
+        if (product == null) return null;
+
+        ProductDto.ProductDtoBuilder builder = ProductDto.builder()
+                .id(product.getId())
+                .category(mapCategoryToCategoryReadDto(product.getCategory()))
+                .sku(product.getSku())
+                .name(product.getName())
+                .description(product.getDescription())
+                .unitPrice(product.getUnitPrice())
+                .imageUrl(product.getImageUrl())
+                .active(product.isActive())
+                .unitsInStock(product.getUnitsInStock())
+                .dateCreated(product.getDateCreated())
+                .lastUpdated(product.getLastUpdated());
+
+        return builder.build();
     }
 
-    public static Product dtoToProduct(ProductDto dto) {
-        Product product = new Product();
-        product.setId(dto.getId());
+    public static Product mapDtoToProduct(Long id, ProductDto productDto) {
+        if (productDto == null) return null;
 
-        ProductCategory category = getProductCategoryFromId(dto.getCategoryId());
-        product.setCategory(category);
+        ProductCategory category = mapCategoryReadDtoToCategory(productDto.getCategory());
 
-        product.setSku(dto.getSku());
-        product.setName(dto.getName());
-        product.setDescription(dto.getDescription());
-        product.setUnitPrice(dto.getUnitPrice());
-        product.setImageUrl(dto.getImageUrl());
-        product.setActive(dto.isActive());
-        product.setUnitsInStock(dto.getUnitsInStock());
-        product.setDateCreated(dto.getDateCreated());
-        product.setLastUpdated(dto.getLastUpdated());
-        return product;
+        return Product.builder()
+                .id(id)
+                .category(category)
+                .sku(productDto.getSku())
+                .name(productDto.getName())
+                .description(productDto.getDescription())
+                .unitPrice(productDto.getUnitPrice())
+                .imageUrl(productDto.getImageUrl())
+                .active(productDto.isActive())
+                .unitsInStock(productDto.getUnitsInStock())
+                .dateCreated(productDto.getDateCreated())
+                .lastUpdated(productDto.getLastUpdated())
+                .build();
     }
 
 }
