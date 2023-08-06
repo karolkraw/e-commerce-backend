@@ -1,7 +1,5 @@
 package com.example.ecommercebackend.ProductCategory;
 
-import com.example.ecommercebackend.ProductCategory.ProductCategory;
-import com.example.ecommercebackend.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

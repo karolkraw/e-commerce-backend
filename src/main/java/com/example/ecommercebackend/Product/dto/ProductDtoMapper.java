@@ -2,7 +2,6 @@ package com.example.ecommercebackend.Product.dto;
 
 import com.example.ecommercebackend.Product.Product;
 import com.example.ecommercebackend.ProductCategory.ProductCategory;
-import com.example.ecommercebackend.ProductCategory.dto.ProductCategoryReadDto;
 
 import static com.example.ecommercebackend.ProductCategory.dto.CategoryDtoMapper.mapCategoryReadDtoToCategory;
 import static com.example.ecommercebackend.ProductCategory.dto.CategoryDtoMapper.mapCategoryToCategoryReadDto;
