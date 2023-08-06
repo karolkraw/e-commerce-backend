@@ -1,6 +1,8 @@
-package com.example.ecommercebackend.controller;
+package com.example.ecommercebackend.Product;
 
-import com.example.ecommercebackend.entity.Product;
+import com.example.ecommercebackend.Product.dto.ProductDto;
+import com.example.ecommercebackend.Product.dto.ProductDtoMapper;
+import com.example.ecommercebackend.Product.Product;
 import com.example.ecommercebackend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,12 +25,13 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id) {
-        return productService.getProductById(id);
+    public ProductDto getProductById(@PathVariable Long id) {
+        Product product = productService.getProductById(id);
+        return ProductDtoMapper.toDto(product);
     }
 
     @PostMapping
-    public Product saveProduct(@RequestBody Product product) {
+    public Product saveProduct(@RequestBody ProductDto product) {
         return productService.saveProduct(product);
     }
 

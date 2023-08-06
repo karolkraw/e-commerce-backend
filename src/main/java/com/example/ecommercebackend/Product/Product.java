@@ -1,6 +1,6 @@
-package com.example.ecommercebackend.entity;
+package com.example.ecommercebackend.Product;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.ecommercebackend.ProductCategory.ProductCategory;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

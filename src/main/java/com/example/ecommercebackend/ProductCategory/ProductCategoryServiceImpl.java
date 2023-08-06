@@ -1,7 +1,5 @@
-package com.example.ecommercebackend.service.impl;
+package com.example.ecommercebackend.ProductCategory;
 
-import com.example.ecommercebackend.entity.ProductCategory;
-import com.example.ecommercebackend.repository.ProductCategoryRepository;
 import com.example.ecommercebackend.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

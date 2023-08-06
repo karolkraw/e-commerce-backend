@@ -1,5 +1,6 @@
-package com.example.ecommercebackend.entity;
+package com.example.ecommercebackend.ProductCategory;
 
+import com.example.ecommercebackend.Product.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

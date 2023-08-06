@@ -1,5 +1,6 @@
-package com.example.ecommercebackend.dto;
+package com.example.ecommercebackend.Product.dto;
 
+import com.example.ecommercebackend.ProductCategory.dto.ProductCategoryReadDto;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -8,7 +9,7 @@ import java.util.Date;
 @Data
 public class ProductDto {
     private Long id;
-    private Long categoryId;
+    private ProductCategoryReadDto categoryId;
     private String sku;
     private String name;
     private String description;
