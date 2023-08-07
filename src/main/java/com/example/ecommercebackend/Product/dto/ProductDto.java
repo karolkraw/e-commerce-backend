@@ -3,12 +3,14 @@ package com.example.ecommercebackend.Product.dto;
 import com.example.ecommercebackend.ProductCategory.dto.ProductCategoryReadDto;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Builder
 @Data
+@EqualsAndHashCode(exclude = {"id", "dateCreated", "lastUpdated"})
 public class ProductDto {
     private Long id;
     private ProductCategoryReadDto category;
