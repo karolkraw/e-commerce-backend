@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.example.ecommercebackend.Product.dto.ProductDtoMapper.mapDtoToProduct;
 import static com.example.ecommercebackend.Product.dto.ProductDtoMapper.mapProductToDto;
@@ -24,8 +25,10 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    public List<ProductDto> getAllProducts() {
+        return productService.getAllProducts().stream()
+                .map(ProductDtoMapper::mapProductToDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
