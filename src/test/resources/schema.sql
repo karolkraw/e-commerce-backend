@@ -1,12 +1,3 @@
-DROP TABLE IF EXISTS `order_item`;
-DROP TABLE IF EXISTS `orders`;
-DROP TABLE IF EXISTS `customer`;
-DROP TABLE IF EXISTS `address`;
-DROP TABLE IF EXISTS `state`;
-DROP TABLE IF EXISTS `country`;
-DROP TABLE IF EXISTS `product`;
-DROP TABLE IF EXISTS `product_category`;
-
 CREATE TABLE IF NOT EXISTS `product_category`
 (
     `id`            BIGINT       NOT NULL AUTO_INCREMENT,
